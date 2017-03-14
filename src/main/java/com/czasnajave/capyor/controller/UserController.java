@@ -23,7 +23,7 @@ public class UserController {
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public @ResponseBody void addUser(@RequestBody User user) {
-        userService.save(user); userService.addUser(user); }
+        userService.save(user);}
 
     @RequestMapping(value = "/updateUser", method = RequestMethod.PUT)
     public @ResponseBody void updateUser(@RequestBody User user) {
