@@ -10,9 +10,6 @@ public interface UserService {
 
     public User getUserById(Long id);
 
-
-    public void addUser(User user);
-
     public void updateUser(User user);
 
     public void save(User user);
