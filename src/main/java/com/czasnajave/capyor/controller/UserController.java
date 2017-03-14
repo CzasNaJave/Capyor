@@ -32,7 +32,7 @@ public class UserController {
 
 
     @RequestMapping("/layout")
-    public String getUserPartialPage(ModelMap modelMap) {
+    public String getUserPartialPage() {
         return "users/layout";
     }
 }
