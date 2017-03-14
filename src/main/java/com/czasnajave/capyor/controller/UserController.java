@@ -9,12 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: czasnajave
- * Date: 12/21/12
- * Time: 12:22 AM
- */
 @Controller
 @RequestMapping("/users")
 public class UserController {
