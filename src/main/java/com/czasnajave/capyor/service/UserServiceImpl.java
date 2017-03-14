@@ -28,28 +28,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user)
     {
-
+        user.setId(++id);
+        userList.add(user);
+        
         HibernateUtil hibernateUtil = new HibernateUtil();
         SessionFactory sessFact = hibernateUtil.getSessionFactory();
         Session session = sessFact.getCurrentSession();
         org.hibernate.Transaction tr = session.beginTransaction();
 
-        System.out.println(user.getUsername());
-
-
         session.save(user);
         session.getTransaction().commit();
-
         tr.commit();
     }
 
 
-    @Override
-    public void addUser(User user) {
-        user.setId(++id);
-        userList.add(user);
-
-    }
+ 
 
     @Override
     public void updateUser(User user) {
