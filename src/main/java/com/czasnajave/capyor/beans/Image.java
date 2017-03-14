@@ -4,9 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 
-/**
- * Created by Exilion on 2017-02-08.
- */
+
 @Entity
 @Table(name = "image")
 public class Image {
