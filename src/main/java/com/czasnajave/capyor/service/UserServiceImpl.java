@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Exilion
- */
+
 @Service("userService")
 public class UserServiceImpl implements UserService {
     private static List<User> userList = new ArrayList<User>();
