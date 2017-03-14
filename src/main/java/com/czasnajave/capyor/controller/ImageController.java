@@ -27,13 +27,4 @@ public class ImageController {
     @RequestMapping(value = "/{image}")
     public String redirect() {
         return "image/layout";
-    }
-
-
-
-
-
-
-
-
-}
+    }}
