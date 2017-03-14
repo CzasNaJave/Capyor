@@ -12,9 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import java.util.List;
 
-/**
- * Created by czasnajave on 12/24/15.
- */
+
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.czasnajave.capyor")
