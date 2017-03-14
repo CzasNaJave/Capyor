@@ -1,8 +1,6 @@
 package com.czasnajave.capyor.controller;
 
-/**
- * Created by Exilion on 2017-02-08.
- */
+
 
 import com.czasnajave.capyor.beans.Image;
 import com.czasnajave.capyor.service.ImageService;
