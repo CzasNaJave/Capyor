@@ -1,8 +1,5 @@
 package com.czasnajave.capyor.dao;
 
-/**
- * Created by Exilion on 2016-12-16.
- */
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
