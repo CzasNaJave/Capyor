@@ -6,12 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: czasnajave
- * Date: 12/21/12
- * Time: 12:19 AM
- */
+
 @Entity
 @Table(name = "USER")
 public class User {
