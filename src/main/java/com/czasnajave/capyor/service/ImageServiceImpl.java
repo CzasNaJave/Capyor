@@ -6,9 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by Exilion on 2017-02-08.
- */
+
 
 @Service("imageService")
 public class ImageServiceImpl implements ImageService {
