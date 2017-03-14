@@ -5,9 +5,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-/**
- * Created by Exilion on 2016-12-20.
- */
 public class HibernateUtil {
 
 
