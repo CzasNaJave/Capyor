@@ -4,10 +4,7 @@ import com.czasnajave.capyor.beans.User;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Exilion
- */
+
 public interface UserService {
     public List<User> getAllUsers();
 
