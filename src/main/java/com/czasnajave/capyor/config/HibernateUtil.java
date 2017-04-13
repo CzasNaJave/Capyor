@@ -5,35 +5,23 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-public class HibernateUtil {
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
+
+@WebListener
+public class HibernateUtil extends Dao  implements ServletContextListener {
 
 
 
-    private static final SessionFactory ourSessionFactory;
-    private static final ServiceRegistry serviceRegistry;
-
-    static {
-        try {
-
-            Configuration configuration = new Configuration();
-
-configuration.addAnnotatedClass(Image.class);
-            serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-            ourSessionFactory = configuration.buildSessionFactory(serviceRegistry);
-        } catch (Throwable ex) {
-            System.err.println("Enitial SessionFactory creation failed" + ex);
-
-            throw new ExceptionInInitializerError(ex);
-        }
+    @Override
+    public void contextInitialized(ServletContextEvent sce) {
+        databaseConnection();
     }
 
 
-
-    public static SessionFactory getSessionFactory() {
-
-        return ourSessionFactory;
+    @Override
+    public void contextDestroyed(ServletContextEvent sce) {
 
     }
-
-
 }

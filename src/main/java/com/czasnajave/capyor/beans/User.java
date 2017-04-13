@@ -5,10 +5,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
-@Table(name = "USER")
+@Table(name = "user")
 public class User {
 
 
@@ -17,21 +19,22 @@ public class User {
     private Long id;
 
     @NotEmpty
-    @Column(name="USERNAME", nullable=false)
+    @Column(name="username", nullable=false)
     private String username;
 
     @NotEmpty
-    @Column(name="EMAIL", nullable=false)
+    @Column(name="email", nullable=false)
     private String emailAddress;
 
     @NotEmpty
-    @Column(name="PASSWORD", nullable=false)
+    @Column(name="password", nullable=false)
     private String password;
+
+
 
     public User() { }
 
-    public User(Long id, String username, String emailAddress, String password) {
-        this.id = id;
+    public User(String username, String emailAddress, String password) {
         this.username = username;
         this.emailAddress = emailAddress;
         this.password = password;
@@ -60,8 +63,4 @@ public class User {
     public String getPassword() {return password;}
 
     public void setPassword(String password) {this.password = password;}
-
-    public PasswordEncoder passwordEncoder(){
-        PasswordEncoder encoder = new BCryptPasswordEncoder();
-        return encoder;
-    }}
+}

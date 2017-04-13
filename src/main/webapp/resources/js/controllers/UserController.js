@@ -1,9 +1,6 @@
 'use strict';
 
-/**
- * TrainController
- * @constructor
- */
+
 var UserController = function($scope, $http) {
     $scope.user = {};
     $scope.editMode = false;

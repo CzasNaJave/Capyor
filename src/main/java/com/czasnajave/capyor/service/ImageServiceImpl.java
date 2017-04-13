@@ -9,28 +9,17 @@ import org.springframework.stereotype.Service;
 
 
 @Service("imageService")
-public class ImageServiceImpl implements ImageService {
+public class ImageServiceImpl extends HibernateUtil implements ImageService {
+
+
 
 
 
     @Override
     public void addImage(Image image)
     {
-
-
-        HibernateUtil hibernateUtil = new HibernateUtil();
-        SessionFactory sessFact = hibernateUtil.getSessionFactory();
-        Session session = sessFact.getCurrentSession();
-        org.hibernate.Transaction tr = session.beginTransaction();
-
-        System.out.println(image.getId());
-        System.out.println(image.getUrl());
-
-
-        session.save(image);
-        session.getTransaction().commit();
-
-        tr.commit();
+        save(image);
+        System.out.println("Image: " + image.getUrl() + " successful added" );
     }
 
 }
