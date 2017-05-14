@@ -1,23 +1,10 @@
-spring-mvc-angularjs
-====================
+# SpringSecurityLoginTutorial
 
-A simple application to demonstrate how to configure Angularjs with Spring MVC
+1. mvn clean
+2. mvn clean install
+3. Go to the target folder
+4. java -jar demo-0.0.1-SNAPSHOT.ja
 
-The application demonstrates how to configure Spring MVC with AngularJS and Thymeleaf.
+- http://localhost:8080/registration
+- http://localhost:8080/login
 
-It uses the AngularJS-Seed with some modifications to allow Spring MVC load the HTML. Also integrated Thymeleaf in case it is needed to pass some values from the spring mvc controller into the partials or index.html file.
-
-I also included the bootstrap library for a better UI.
-
-Run Local (Embedded Tomcat):
-----------------
-  - execute: *mvn tomcat7:run*
-  - Then open the URL: http://localhost:8080/spring-mvc-angularjs
-
-Run inside tomcat container
------------------------------
-Package it with maven
-
-  - execute: *mvn clean package*
-  - copy the result war file into your tomcat/webapp folder
-  - Then open the URL: http://localhost:8080/spring-mvc-angularjs
