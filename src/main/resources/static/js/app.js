@@ -1,6 +1,7 @@
 var App=angular.module("App", []);
-App.controller("Controller", function($scope, $http){
+App.controller("MyController", function($scope, $http){
 
+    $scope.welcomeMsg = "Welcome!";
 
 
 
@@ -9,4 +10,6 @@ App.controller("Controller", function($scope, $http){
 
 
 
-
+config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/bang', {templateUrl: 'bang.html'});
+}]);

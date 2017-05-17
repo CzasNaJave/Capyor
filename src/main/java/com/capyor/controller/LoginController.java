@@ -23,6 +23,11 @@ public class LoginController {
 	@Autowired
 	private UserService userService;
 
+    @RequestMapping("/bang")
+    public String index() {
+        return "bang";
+    }
+
 
 	@RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
 	public ModelAndView login(){
@@ -54,7 +59,7 @@ public class LoginController {
 			modelAndView.setViewName("registration");
 		} else {
 			userService.saveUser(user);
-			modelAndView.addObject("successMessage", "You have successfully registered");
+			modelAndView.addObject("successMessage", "User has been registered successfully");
 			modelAndView.addObject("user", new User());
 			modelAndView.setViewName("registration");
 
@@ -67,9 +72,9 @@ public class LoginController {
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
-		modelAndView.addObject( user.getEmail());
+		modelAndView.addObject("userName", "Welcome " + user.getName());
 		modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
-		modelAndView.setViewName("home");
+		modelAndView.setViewName("/home");
 		return modelAndView;
 	}
 
@@ -82,14 +87,14 @@ public class LoginController {
     }
 
 
-    @RequestMapping(value="/homepage", method = RequestMethod.GET)
+    @RequestMapping(value="/user/home", method = RequestMethod.GET)
     public ModelAndView hsomeas(){
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
-        modelAndView.addObject(user.getEmail() );
+        modelAndView.addObject("userName", "Welcome " + user.getName()  + ")");
         modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
-        modelAndView.setViewName("home");
+        modelAndView.setViewName("/home");
         return modelAndView;
     }
 
